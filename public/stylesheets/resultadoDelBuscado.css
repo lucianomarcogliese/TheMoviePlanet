@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 html{
-  cursor: url(../Resources/giphy.gif),default;
+  cursor: url(/images/giphy.gif),default;
 }
 body{
-  cursor: url(../Resources/giphy.gif),default;
-  background-image: url("../Resources/Fondo.png");
+  cursor: url(/images/giphy.gif),default;
+  background-image: url("/images/Fondo.png");
   background-size: cover;
 }
 footer{
