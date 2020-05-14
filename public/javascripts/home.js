@@ -21,7 +21,7 @@ window.addEventListener("load",  function(){
           var li;
           li = '<li>'
           li += "<button onclick='agregarFavoritos("+id+")' class='estrellita'> &#9733; </button>"
-          li += "<a href='../5-Detalle de una pelicula/detallePeli.html?idDePeli="+id+"'>"
+          li += "<a href='/peliculas/detalle?idDePeli="+id+"'>"
           li += '<img src=' + url + img + '>'
           li += '<div class="uk-position-center uk-panel divPelis"><h1 class="headersHome">' + titulo + '</h1></div>'
           li += "</a>"
@@ -59,7 +59,7 @@ window.addEventListener("load",  function(){
           var li;
           li = '<li>'
           li += "<button onclick='agregarFavoritos("+id+")' class='estrellita'> &#9733; </button>"
-          li += "<a href='../5-Detalle de una pelicula/detallePeli.html?idDePeli="+id+"'>"
+          li += "<a href='/peliculas/detalle?idDePeli="+id+"'>"
           li += '<img src=' + url + img + '>'
           li += '<div class="uk-position-center uk-panel divPelis"><h1 class="headersHome">' + titulo + '</h1></div>'
           li += '</li>'
@@ -94,7 +94,7 @@ window.addEventListener("load",  function(){
            var li;
            li = '<li>'
            li += "<button onclick='agregarFavoritos("+id+")' class='estrellita'> &#9733; </button>"
-           li += "<a href='../5-Detalle de una pelicula/detallePeli.html?idDePeli="+id+"'>"
+           li += "<a href='/peliculas/detalle?idDePeli="+id+"'>"
            li += '<img src=' + url + img + '>'
            li += '<div class="uk-position-center uk-panel divPelis"><h1 class= "headersHome">' + titulo + '</h1></div>'
            li += '</li>'

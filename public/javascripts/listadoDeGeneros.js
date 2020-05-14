@@ -17,7 +17,7 @@ window.addEventListener("load",  function(){
   
            var div = "";
            div += '<li>'
-           div += '<a href="../3-Pelis por genero/peliculasPorGenero.html?idGenero='+id+'"><div class="uk-position-center uk-panel"><h1>' + nombre + '</h1></div></a>'
+           div += '<a href="/peliculas/PorGenero?idGenero='+id+'"><div class="uk-position-center uk-panel"><h1>' + nombre + '</h1></div></a>'
            div += '</li>'
   
   
