@@ -26,6 +26,9 @@ var rutasDePeliculas= require("./routes/routesMovies");
 app.use("/peliculas", rutasDePeliculas);
 
 
+var usuarioRouter = require('./routes/routesUsuarios');
+app.use('/usuario', usuarioRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

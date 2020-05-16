@@ -1,3 +1,7 @@
+let db = require("../database/models/index")
+const op = db.Sequelize.Op;
+
+
 let peliculasController = {  
 
     home: function(req,res){
@@ -21,6 +25,7 @@ let peliculasController = {
         res.render ("peliculasFavoritas")
     },
 
+   
 }
 
 
