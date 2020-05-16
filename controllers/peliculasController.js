@@ -24,9 +24,13 @@ let peliculasController = {
     peliPrefe: function(req,res){
         res.render ("peliculasFavoritas")
     },
-
+    search: function(req,res){
+        res.render ("usuariosResultados")
+    },
+    
    
 }
+
 
 
 

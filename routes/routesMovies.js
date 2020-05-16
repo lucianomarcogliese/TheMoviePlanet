@@ -6,14 +6,15 @@ var router = express.Router();
 
 
 let peliculasController = require ("../controllers/peliculasController");
-
+let resultadoUsuariosController = require ("../controllers/resultadoUsuariosController");
 
 
 
 router.get("/", peliculasController.home );
 
-router.post("/", peliculasController.home );
+router.get("/search", resultadoUsuariosController.search);
 
+router.post("/", peliculasController.home);
 
 router.get("/porGenero", peliculasController.pelisPorGenero );
 
