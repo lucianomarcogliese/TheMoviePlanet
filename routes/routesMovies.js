@@ -9,14 +9,17 @@ let peliculasController = require ("../controllers/peliculasController");
 let resenaController = require ("../controllers/resenaController");
 
 let usuariosController = require ("../controllers/usuariosControllers");
+let resultadoUsuariosController = require ("../controllers/resultadoUsuariosController");
+
 
 
 router.get("/", peliculasController.home );
 router.get("/", usuariosController.registracion );
 router.post("/", usuariosController.guardado );
 
-router.post("/", peliculasController.home );
+router.get("/search", resultadoUsuariosController.search);
 
+router.post("/", peliculasController.home);
 
 router.get("/porGenero", peliculasController.pelisPorGenero );
 
