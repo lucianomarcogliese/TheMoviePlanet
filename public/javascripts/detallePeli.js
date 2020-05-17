@@ -1,5 +1,12 @@
 window.addEventListener("load", function () {
 
+var botonResena = document.querySelector(".botonResena");
+var formularioResena = document.querySelector(".formularioResena");
+
+botonResena.onclick = function (event) {
+  formularioResena.style.display = "block";
+  botonResena.style.display ="none";  }
+
   var urlParams = new URLSearchParams(window.location.search);
   var query = urlParams.get('idDePeli');
 

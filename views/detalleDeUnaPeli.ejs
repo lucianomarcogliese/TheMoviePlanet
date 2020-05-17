@@ -18,7 +18,7 @@
       <a class="navbar-brand" href="/peliculas"> <img src="/images/logo.png" class="loguito" alt=""> </a>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="/listadoDeGeneros">Genres<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/peliculas/listadoDeGeneros">Genres<span class="sr-only">(current)</span></a>
         </li>
         <li id="pelispref"class="nav-item">
           <a class="nav-link" href="/peliculas/peliPreferida">Favorite movies</a>
@@ -92,6 +92,94 @@
     </section>
 <br>
 <br>
+
+
+<button class= "botonResena">Crear reseña</button>
+
+
+<form  class= "formularioResena" action="/peliculas/detalle" method="POST" style="display: none;" > 
+                        
+                        
+  <div>
+        <label for="">Email</label>
+        <input type="text" name= "email">
+    </div>
+            <br>
+    <div>
+  
+        <label for="">Contraseña</label>
+        <input type="password" name= "contraseña">
+    </div> 
+            <br>
+  
+            <br>
+    <div>
+  
+            <label for="">Puntaje</label>
+            <input type="text" name= "puntaje">
+  
+    </div>
+            <br>
+  
+                <br>
+      <div>
+              <label for=""> Fecha de creacion</label>
+              <input type="date" name= "creacion">
+     </div>
+     <div>
+        <label for=""> Fecha de actualizacion</label>
+        <input type="date" name= "actualizacion">
+</div>
+  
+     <div>
+      <label for=""> Reseña</label>
+      <input type="text" name= "resenas">
+  </div>
+            <br>
+  
+            <input type="submit" value="Enviar">
+  
+  
+  </form>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <footer>
       <img src="/images/tmdblogo.png" class="tmdblogo">
