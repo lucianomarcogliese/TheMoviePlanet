@@ -24,22 +24,27 @@
         <li id=""class="nav-item">
           <a class="nav-link" href="/peliculas/favoritos">Favorite movies</a>
         </li>
-      </ul>
-      <!-- <form method="get"class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form> -->
 
+        <li class= "nav-item">
+
+          
+          <form action="/peliculas/search" method="GET"> 
+            <input type="text" name="search" placeholder="Buscador de usuario">
+            <input type="submit" value="Enviar">
+        </form>  
+      </li> 
+
+    
+      </ul>
+
+    
       <form method="get" action="/peliculas/buscador" class="uk-search uk-search-default buscar">
                       <span class="uk-search-icon-flip" uk-search-icon></span>
                       <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search" >
                   </form>
       <a  id="login" style="color:gold"; class="uk-button uk-button-default btn btn-outline-warning" href="#modal-sections" uk-toggle>Registrate</a>
 
-<h2>Buscador de Usuarios</h2>
-<form action="/home/search" method="GET">
-<input type="text" name="search">
-<input type="submit" value="search">
+
 
 
 

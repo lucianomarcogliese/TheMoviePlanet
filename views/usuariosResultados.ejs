@@ -6,13 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>listado Usuarios </h1>
-    <ul>
-        <% for (let i=0; i < usuariosResult.length; i++ ){ %> 
-<li>
-<%= usuariosResult[i].name %>
-</li>
-        <% } %> 
+   
+<h1>Usuarios encontrados:</h1>
+
+
+    <% for (let i = 0; i< usuarios.length; i++) { %>
+<ul> 
+        <li>
+            <a href="/usuario/detalle/<%=usuarios[i].id%>" >
+             Nombre: <%=usuarios[i].nombre %>
+        </li>
+       
     </ul>
+    <% } %>
 </body>
 </html>

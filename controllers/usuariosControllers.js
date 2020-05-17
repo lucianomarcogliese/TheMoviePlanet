@@ -1,5 +1,5 @@
 let db = require("../database/models/index")
-
+const op = db.Sequelize.Op;
 let bcrypt = require("bcryptjs");
 
 
@@ -26,6 +26,32 @@ guardado: function(req, res) {
     })
 },
 
+search: function (req,res){
+    db.usuarios.findAll(
+        {
+            where : [ 
+               
+                { email: {[op.like]: req.query.search + "%"   }}
+            ],
+           
+        }
+    )
+    .then ( function(usuarios){
+        res.render( "usuariosResultados", {
+            usuarios: usuarios
+        })
+        
+    })
+},
+
+detalle: function (req,res){
+    db.usuarios.findByPk(req.params.id)
+    .then(function(unUsuario){
+        res.render("detalleUsuario", {
+            unUsuario : unUsuario
+        })
+    })
+},
 
 
 
