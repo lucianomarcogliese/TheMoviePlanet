@@ -27,5 +27,15 @@ module.exports= (sequelize , DataTypes) => {
         }
         
     const usuarios = sequelize.define ( "usuarios", cols , config);
+    
+    
+    usuarios.associate= function(modelos){
+        usuarios.hasMany(modelos.resenas, {
+            as: "resena",
+            foreingKey: "id_usuarios"
+        })
+    } 
+    
+
     return usuarios;
 }

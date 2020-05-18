@@ -35,7 +35,8 @@ router.get("/detalle", resenaController.creacion);
 router.post("/detalle", resenaController.guardado);
 
 
-router.get("/detalle", resenaController.listado);
+/* router.get("/detalle", resenaController.listado); */
+
 
 
 

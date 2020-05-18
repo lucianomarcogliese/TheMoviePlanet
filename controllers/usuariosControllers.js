@@ -54,6 +54,15 @@ detalle: function (req,res){
 },
 
 
+   
+    listado: function(req,res){
+        db.resenas.findAll()
+        .then(function(resenas){
+            res.render( "misResenas", { resenas : resenas})
+        })
+    
+},
+    
 
    
 }

@@ -27,13 +27,17 @@ db.resenas.create(resena)
 },
 
 
-    listado: function(req,res){
+  /*   listado: function(req,res){
         db.resenas.findAll()
         .then(function(resenas){
             res.render( "detalleDeUnaPeli", { resenas : resenas})
         })
     
-}
+} */
+
+
+
+
 
 
 
