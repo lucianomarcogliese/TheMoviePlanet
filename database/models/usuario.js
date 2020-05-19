@@ -32,7 +32,7 @@ module.exports= (sequelize , DataTypes) => {
     usuarios.associate= function(modelos){
         usuarios.hasMany(modelos.resenas, {
             as: "resena",
-            foreingKey: "id_usuarios"
+            foreignKey: "id_usuarios"
         })
     } 
     
