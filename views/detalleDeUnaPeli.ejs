@@ -94,50 +94,52 @@
 <br>
 
 
-<button class= "botonResena">Crear reseña</button>
+<button class= "botonResena uk-button uk-button-default uk-margin uk-button-secondary">Crear reseña</button>
 
 
 <form  class= "formularioResena" action="/peliculas/detalle" method="POST" style="display: none;" > 
                         
                         
   <div>
-        <label for="">Email</label>
+        <label class="labelsDeResenas" for="">Email</label>
         <input type="text" name= "email">
     </div>
             <br>
     <div>
   
-        <label for="">Contraseña</label>
+        <label class="labelsDeResenas" for="">Contraseña</label>
         <input type="password" name= "contraseña">
     </div> 
             <br>
   
-            <br>
+        
     <div>
   
-            <label for="">Puntaje</label>
+            <label class="labelsDeResenas" for="">Puntaje</label>
             <input type="text" name= "puntaje">
   
     </div>
             <br>
   
-                <br>
+              
       <div>
-              <label for=""> Fecha de creacion</label>
+              <label class="labelsDeResenas" for=""> Fecha de creacion</label>
               <input type="date" name= "creacion">
      </div>
+     <br>
      <div>
-        <label for=""> Fecha de actualizacion</label>
+        <label class="labelsDeResenas" for=""> Fecha de actualizacion</label>
         <input type="date" name= "actualizacion">
 </div>
-  
+  <br>
      <div>
-      <label for=""> Reseña</label>
+      <label class="labelsDeResenas" for=""> Reseña</label>
       <input type="text" name= "resenas">
   </div>
             <br>
+            <br>
   
-            <input type="submit" value="Enviar">
+            <input class="uk-button uk-button-default uk-margin uk-button-primary" type="submit" value="Enviar">
   
   
   </form>

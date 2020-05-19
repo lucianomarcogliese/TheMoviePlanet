@@ -168,6 +168,9 @@ section{
     position: relative;
 }
 
+.labelsDeResenas {
+  color: white;
+}
 .fechaEstreno h2{
   font-family: Poppins;
   font-weight: normal;
