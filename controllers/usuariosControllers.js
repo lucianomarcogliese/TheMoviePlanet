@@ -45,7 +45,11 @@ search: function (req,res){
 },
 
 detalle: function (req,res){
-    db.usuarios.findByPk(req.params.id)
+    db.usuarios.findByPk(req.params.id, {
+        include: [
+            {association: "resena"},
+        ]
+    })
     .then(function(unUsuario){
         res.render("detalleUsuario", {
             unUsuario : unUsuario

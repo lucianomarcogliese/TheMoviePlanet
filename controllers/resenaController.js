@@ -15,24 +15,24 @@ guardado: function(req, res) {
                  db.usuarios.findOne({
                     
                         where : [ 
-                                  { email: {[op.like]: req.body.email + "%"}}
+                                  { email: {[op.like]: req.body.email }}
                             ],
                         })
 
                    .then((usuarios) => {
-                    console.log(usuarios.id);
+                
                     let resena = {
    
                         resenas: req.body.resenas,
                         rating: req.body.puntaje,
                          fecha_de_creacion: req.body.creacion,
                          fecha_de_actualizacion: req.body.actualizacion,
-                           usuario_id : usuarios.id,  
-                       
-                        
-                           /*  pelicula_id: req.query.idDePeli    */
+                           id_usuarios : usuarios.id, 
+                           
+                           
                            }
-       
+                                
+                                
                     db.resenas.create(resena)
                   return resena;
                 })
