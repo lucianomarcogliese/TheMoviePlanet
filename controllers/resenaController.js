@@ -28,7 +28,7 @@ guardado: function(req, res) {
                          fecha_de_creacion: req.body.creacion,
                          fecha_de_actualizacion: req.body.actualizacion,
                            id_usuarios : usuarios.id, 
-                           
+                           id_pelicula : req.query.idDePeli,
                            
                            }
                                 
