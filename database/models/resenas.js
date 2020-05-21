@@ -5,10 +5,10 @@ module.exports= (sequelize , DataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-       /*  id_pelicula: {
+        id_peliculas: {
             type: DataTypes.INTEGER,
-            foreignKey: true
-        }, */
+           
+        }, 
         id_usuarios:{
            type: DataTypes.INTEGER,
            foreignKey: true

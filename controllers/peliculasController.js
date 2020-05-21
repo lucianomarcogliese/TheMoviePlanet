@@ -18,7 +18,11 @@ let peliculasController = {
         res.render ("resultadoDeBusqueda")
     },
     detalleDeUnaPeli: function(req,res){
-        res.render ("detalleDeUnaPeli")
+            
+        let idPelicula = req.query.idDePeli
+    
+
+        res.render ("detalleDeUnaPeli", { idPelicula : idPelicula})
     },
 
     peliPrefe: function(req,res){

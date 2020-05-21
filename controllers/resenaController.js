@@ -20,6 +20,10 @@ guardado: function(req, res) {
                         })
 
                    .then((usuarios) => {
+
+                    let query = req.query.idDePeli
+                    console.log(query);
+                    
                 
                     let resena = {
    
@@ -27,8 +31,8 @@ guardado: function(req, res) {
                         rating: req.body.puntaje,
                          fecha_de_creacion: req.body.creacion,
                          fecha_de_actualizacion: req.body.actualizacion,
-                           id_usuarios : usuarios.id, 
-                           
+                           id_usuarios : usuarios.id,    
+                           id_peliculas: req.query.idDePeli  
                            
                            }
                                 
@@ -44,6 +48,9 @@ guardado: function(req, res) {
             
 },
 
+    misResenas: function(req,res ) {
+        res.render("MisResenas")
+    }
 
   
 
