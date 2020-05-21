@@ -31,8 +31,13 @@ guardado: function(req, res) {
                         rating: req.body.puntaje,
                          fecha_de_creacion: req.body.creacion,
                          fecha_de_actualizacion: req.body.actualizacion,
+<<<<<<< HEAD
                            id_usuarios : usuarios.id,    
                            id_peliculas: req.query.idDePeli  
+=======
+                           id_usuarios : usuarios.id, 
+                           id_pelicula : req.query.idDePeli,
+>>>>>>> 47f0d6f1ebabbf57e04fa342a723594e83334cbe
                            
                            }
                                 
