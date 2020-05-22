@@ -30,7 +30,7 @@ guardado: function(req, res) {
                         resenas: req.body.resenas,
                         rating: req.body.puntaje,
                          fecha_de_creacion: req.body.creacion,
-                         fecha_de_actualizacion: req.body.actualizacion,
+                         fecha_de_actualizacion: req.body.creacion,
                            id_usuarios : usuarios.id,    
                            id_peliculas: req.query.idDePeli  
                            
@@ -50,7 +50,11 @@ guardado: function(req, res) {
 
     misResenas: function(req,res ) {
         res.render("MisResenas")
-    }
+    },
+
+   
+
+
 
   
 

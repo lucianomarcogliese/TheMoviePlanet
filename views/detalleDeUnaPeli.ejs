@@ -93,49 +93,62 @@
 <br>
 <br>
 
+<% for (let i = 0; i< resenas.length; i++) { %>
+  <ul> 
+          <li>
+              
+               Nombre: <%=resenas[i].resenas %>
+          </li>
+         
+      </ul>
+      <% } %>
+
+
 
 <button class= "botonResena uk-button uk-button-default uk-margin uk-button-secondary">Crear reseña</button>
 
-
+<div class="resenas">  
 <form  class= "formularioResena" action="/peliculas/detalle?idDePeli=<%=idPelicula%>" method="POST" style="display: none;" > 
                         
-                        
+        <br> 
+                    
   <div>
-        <label class="labelsDeResenas" for="">Email</label>
-        <input type="text" name= "email">
+        <label class="labelsDeResenas" for="" ></label>
+        <input type="text" name= "email" placeholder="Ingresa tu email">
     </div>
             <br>
     <div>
   
-        <label class="labelsDeResenas" for="">Contraseña</label>
-        <input type="password" name= "contraseña">
+        <label class="labelsDeResenas" for=""></label>
+        <input type="password" name= "contraseña" placeholder="Ingresa tu contraseña">
     </div> 
             <br>
   
         
     <div>
   
-            <label class="labelsDeResenas" for="">Puntaje</label>
-            <input type="text" name= "puntaje">
+            <label class="labelsDeResenas" for=""></label>
+            <input type="text" name= "puntaje" placeholder="Puntaje de la pelicula">
   
     </div>
             <br>
   
               
       <div>
-              <label class="labelsDeResenas" for=""> Fecha de creacion</label>
+              <label class="labelsDeResenas" for=""> </label>
               <input type="date" name= "creacion">
      </div>
      <br>
-     <div>
-        <label class="labelsDeResenas" for=""> Fecha de actualizacion</label>
-        <input type="date" name= "actualizacion">
+     <div style="display: none;">
+        <label class="labelsDeResenas" for=""> </label>
+        <input type="date" name= "actualizacion" placeholder="Fecha de actualizacion">
 </div>
-  <br>
+  
      <div>
-      <label class="labelsDeResenas" for=""> Reseña</label>
-      <input type="text" name= "resenas">
-  </div>
+      <label class="labelsDeResenas" for=""> </label>
+      <input  class="reseñitas" type="text" name= "resenas"  height="50%" placeholder="Aqui tus comentarios de la pelicula">
+      
+    </div>
             <br>
             <br>
   
@@ -144,7 +157,7 @@
   
   </form>
   
-
+</div>
 
 
 

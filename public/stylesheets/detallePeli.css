@@ -10,6 +10,13 @@ body{
   background-size: cover;
 
 }
+.resenas{
+  background-color: #3955D3;
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
 footer{
     background-color: rgba(112, 148, 181, 0.65);
     height: 12vh;

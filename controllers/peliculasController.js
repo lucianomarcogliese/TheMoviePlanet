@@ -19,11 +19,38 @@ let peliculasController = {
     },
     detalleDeUnaPeli: function(req,res){
             
-        let idPelicula = req.query.idDePeli
+       
+    
+        
+            db.resenas.findAll({
+                where : [ 
+                    { id_peliculas: {[op.like]: req.query.idDePeli }}
+              ],
+            })
+            .then(function(resenas){
+                let idPelicula = req.query.idDePeli
+                
+                res.render( "detalleDeUnaPeli", { 
+                    resenas : resenas,
+                    idPelicula : idPelicula
+                })
+            })
+        
+   
+   
+   
+   
+     
+
+
+
+
+        
+    },
     
 
-        res.render ("detalleDeUnaPeli", { idPelicula : idPelicula})
-    },
+
+
 
     peliPrefe: function(req,res){
         res.render ("peliculasFavoritas")
