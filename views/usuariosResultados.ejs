@@ -1,24 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="/stylesheets/pagina.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/stylesheets/usuarioresultado.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-   
-<h1 class="a">Usuarios encontrados:</h1>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+  
+        <a class="navbar-brand" href="/peliculas"> <img src="/images/logo.png" class="loguito" alt=""> </a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/peliculas/listadoDeGeneros">Genres<span class="sr-only">(current)</span></a>
+          </li>
+          
+          <li id=""class="nav-item">
+            <a class="nav-link" href="/peliculas/favoritos">Favorite movies</a>
+          </li>
+  
+          <li id=""class="nav-item">
+            <a  href="/usuario/misResenas" class="nav-link" >Mis reseñas</a>
+          </li>
+  
+          <li class= "nav-item">
+  
+            
+            <form action="/peliculas/search" method="GET"> 
+              <input type="text" name="search" placeholder="Buscador de usuario">
+              <input type="submit" value="Enviar">
+          </form>  
+        </li> 
+  
+      
+        </ul>
+  
+      
+        <form method="get" action="/peliculas/buscador" class="uk-search uk-search-default buscar">
+                        <span class="uk-search-icon-flip" uk-search-icon></span>
+                        <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search" >
+                    </form>
+        <a  id="login" style="color:gold"; class="uk-button uk-button-default btn btn-outline-warning" href="#modal-sections" uk-toggle>Registrate</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </form>
+  
+  
+  <div id="modal-sections" uk-modal>
+      <div class="uk-modal-dialog">
+          <button class="uk-modal-close-default" type="button" uk-close></button>
+          <div class="uk-modal-header">
+              <h2 class="uk-modal-title">Registrate!</h2>
+          </div>
+          <div class="uk-modal-body">
+           
+          
+              </ul>
+            <form class="logincompleto" action="/peliculas" method="post">
+           
+          <form action="/usuario" method="POST">
+            <br>
+             <div>
+                 <label for="">Nombre</label>
+                 <input type="text" name="nombre">
+             </div>
+             
+             <br>
+             <div>
+                 <label for="">Email</label>
+                 <input type="text" name="email">
+             </div>
+             <br>
+             <div>
+                 <label for="">Password</label>
+                 <input type="password" name="contraseña">
+             
+             </div>
+             <div>
+               <br>
+                 <label for="">Fecha de Nacimiento</label>
+                 <input type="date" name="nacimiento">
+             
+             </div>
+             <br>
+            
+        
+          <div class="uk-modal-footer uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+              <button class="uk-button uk-button-primary" type="submit">Send</button>
+          </div>
+        </form>      
+      </div>
+    </div>
+      </div>
+    </nav>
+      </header>
 
+
+
+<% if ( usuarios.length == 0) { %>
+                <h4 style="color: white;">No se encontro ningun usuario</h4>
+<% } else {%>
 
     <% for (let i = 0; i< usuarios.length; i++) { %>
-<ul> 
+
+        <h1 class="a">Usuarios encontrados:</h1>
+        <ul> 
         <li>
             <a class="b" href="/usuario/detalle/<%=usuarios[i].id%>" >
              Nombre: <%=usuarios[i].nombre %>
         </li>
        
     </ul>
-    <% } %>
+    <% } } %>
+
+
+    <footer>
+        <img src="/images/tmdblogo.png" class="tmdblogo">
+
+        <div class="nombres">
+        <ul>
+          <li>MATIAS GALLARDO</li>
+          <li>JUAN IGNACIO BEDOIAN</li>
+          <li>LUCIANO MARCOGLIESE</li>
+        </ul>
+      </div>
+           </div>
+
+     </footer>
 </body>
 </html>

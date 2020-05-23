@@ -2,7 +2,7 @@ let db = require("../database/models/index")
 const op = db.Sequelize.Op;
 let bcrypt = require("bcryptjs");
 
-
+let moduloLogin = require("../modulo-login")
 
 let usuariosController = {  
 
@@ -16,7 +16,8 @@ guardado: function(req, res) {
     let usuario = {
         nombre: req.body.nombre,
         email: req.body.email,
-        contraseña: bcrypt.hashSync(req.body.contraseña, 10),
+        contraseña: bcrypt.hashSync(req.body.contraseña, 10), 
+       contraseña: req.body.contraseña,
         fecha_de_nacimiento: req.body.nacimiento
     }
 
@@ -37,6 +38,8 @@ search: function (req,res){
         }
     )
     .then ( function(usuarios){
+        console.log(usuarios);
+        
         res.render( "usuariosResultados", {
             usuarios: usuarios
         })
@@ -57,15 +60,21 @@ detalle: function (req,res){
     })
 },
 
+   login: function(req,res){
+      res.render("misResenas")
+  },
+  
+  validacion: function(req,res){
 
-   
-    listado: function(req,res){
-        db.resenas.findAll()
-        .then(function(resenas){
-            res.render( "misResenas", { resenas : resenas})
-        })
-    
-},
+        moduloLogin.validar(req.body.email, req.body.contraseña)
+        .then( resultado => {
+         console.log(resultado);
+         
+                   res.send(resultado)
+            })
+  }, 
+ 
+
     
 
    

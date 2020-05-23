@@ -23,9 +23,15 @@ let peliculasController = {
     
         
             db.resenas.findAll({
+               
                 where : [ 
                     { id_peliculas: {[op.like]: req.query.idDePeli }}
               ],
+
+              include: [
+                {association: "usuario"},
+            ]  
+              
             })
             .then(function(resenas){
                 let idPelicula = req.query.idDePeli

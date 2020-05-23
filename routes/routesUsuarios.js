@@ -8,9 +8,13 @@ let usuariosController = require ("../controllers/usuariosControllers");
 
 router.get("/", usuariosController.registracion );
 router.post("/", usuariosController.guardado );
- router.get("/misResenas", usuariosController.listado ); 
-
 router.get("/detalle/:id", usuariosController.detalle );
+
+  router.get("/misResenas", usuariosController.login ); 
+ router.post("/misResenas", usuariosController.validacion );  
+ 
+
+
 
 
 
