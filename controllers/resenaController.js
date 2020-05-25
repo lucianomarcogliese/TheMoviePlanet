@@ -8,6 +8,7 @@ let resenaController = {
     
                      res.render("detalleDeUnaPeli");
     
+
     },
 
     guardado: function(req, res) {
