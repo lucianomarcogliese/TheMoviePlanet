@@ -23,12 +23,7 @@ let resenaController = {
                              })
                                      .then((usuarios) => {
 
-                                if (usuarios == null){
-                                    errores.push("Ese email no existe")
-                                    res.render("detalleDeUnaPeli", {
-                                        errores:errores
-                                    } )
-                                } 
+                               
 
                     let resena = {
                                   resenas: req.body.resenas,
