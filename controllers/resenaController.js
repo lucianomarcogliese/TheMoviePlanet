@@ -8,19 +8,7 @@ let resenaController = {
     
                      res.render("resena");
     
-    /* validar pelicula    */
 
-    function validarPelicula(pelicula){
-      let errores= [];
-      if (pelicula.title == "") {
-        errores.push("Por favor escribir el titulo completo!")
-      } else if (pelicula.title.lenght < 3) {
-        errores.push ("Escribir como minimo 3 caracteres!")
-      }
-      if (isNaN (pelicula.lenght)){
-        errores.push ("La duracion debe ser un numero!")
-      }
-    }
     },
 
     guardado: function(req, res) {
@@ -46,20 +34,6 @@ let resenaController = {
                            
                    }
 
-
-                   /* 2da parte de validacion de pelicula */
-                   let errores = validarPelicula(pelicula)
-
-                   if (errores.length > 0) {
-                     //si hubieron errores => mostrar pagina con el formulario y los errores
-                     db.Genero.findAll()
-                     .then(generos) {
-                       res.render("". {           //no se que view poner ahi, 
-                         peliculas:pelicula,
-                         errores: errores
-                       })
-                     }
-                   }
                                 
                                 
                         db.resenas.create(resena)
