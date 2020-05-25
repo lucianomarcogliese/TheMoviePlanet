@@ -19,8 +19,6 @@ let peliculasController = {
     },
     detalleDeUnaPeli: function(req,res){
             
-       
-    
         
             db.resenas.findAll({
                
@@ -43,19 +41,9 @@ let peliculasController = {
             })
         
    
-   
-   
-   
-     
-
-
-
-
         
     },
     
-
-
 
 
     peliPrefe: function(req,res){

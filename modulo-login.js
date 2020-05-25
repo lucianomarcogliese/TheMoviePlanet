@@ -7,7 +7,7 @@ let moduloLogin = {
                 email: email
             }
         })
-        .then(function(usuarios) {
+        .then(function(usuario) {
             return usuarios != null;
         })
     },
@@ -24,8 +24,6 @@ let moduloLogin = {
     },
 
     validar: function (email, pass) {
-           
-       /*  let check = bcrypt.compareSync(pass , ) */
         return db.usuarios.findOne({
             where:{
                 email:email,
@@ -33,17 +31,9 @@ let moduloLogin = {
             },
         })
         .then(results=>{
-
             return results;
-            
-           
         })
-  
-  
-  
     }
-
-
 }
 
 

@@ -119,9 +119,10 @@
                 <h4 style="color: white;">No se encontro ningun usuario</h4>
 <% } else {%>
 
+  <h1 class="a">Usuarios encontrados:</h1>
     <% for (let i = 0; i< usuarios.length; i++) { %>
 
-        <h1 class="a">Usuarios encontrados:</h1>
+       
         <ul> 
         <li>
             <a class="b" href="/usuario/detalle/<%=usuarios[i].id%>" >
