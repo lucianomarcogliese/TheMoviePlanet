@@ -92,20 +92,24 @@
     </section>
 <br>
 <br>
+ 
+
+
 
 
 <% for (let i = 0; i< resenas.length; i++) { %>
 
   <div class="listadoDeResenas"> 
 
-  <ul>    
-         <li style="list-style: none;">   <%=resenas[i].rating %>  </li> 
-         <li style="list-style: none;"> <%=resenas[i].resenas %> </li>
-          <li style="list-style: none;">  <%=resenas[i].fecha_de_actualizacion %> </li>
+  <ul>  
+          <li style="list-style: none;">   <%=resenas[i].rating %> ★ </li>  
+          <li style="list-style: none;">   <%=resenas[i].usuario.nombre %>  </li>  
+          <li style="list-style: none;"> <%=resenas[i].resenas %> </li>
+          <li style="list-style: none;"> Ultima vez actualizada: <%=resenas[i].fecha_de_actualizacion %> </li>
                 
       </ul>
     </div>
-      <% } %>
+      <% }  %>
 
 
 
@@ -125,7 +129,7 @@
   </ul>
 <% } %>
 
-<form  class= "formularioResena resenas" action="/peliculas/detalle?idDePeli=<%=idPelicula%>" method="POST" style="display: none;" > 
+<form  class= "formularioResena resenas" action="/peliculas/detalle?idDePeli=<%=idPelicula%>" style= "display: none;" method="POST"  > 
                         
         <br> 
                     

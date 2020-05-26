@@ -4,9 +4,7 @@ const op = db.Sequelize.Op;
 
 let peliculasController = {  
 
-    home: function(req,res){
-        res.render ("home")
-    },
+  
 
     listadoDeGeneros: function(req,res){
         res.render ("listadoDeGeneros")
@@ -17,32 +15,7 @@ let peliculasController = {
     resultadoDeBusqueda: function(req,res){
         res.render ("resultadoDeBusqueda")
     },
-    detalleDeUnaPeli: function(req,res){
-            
-        
-            db.resenas.findAll({
-               
-                where : [ 
-                    { id_peliculas: {[op.like]: req.query.idDePeli }}
-              ],
-
-              include: [
-                {association: "usuario"},
-            ]  
-              
-            })
-            .then(function(resenas){
-                let idPelicula = req.query.idDePeli
-                
-                res.render( "detalleDeUnaPeli", { 
-                    resenas : resenas,
-                    idPelicula : idPelicula
-                })
-            })
-        
    
-        
-    },
     
 
 

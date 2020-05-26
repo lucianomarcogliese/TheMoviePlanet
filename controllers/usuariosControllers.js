@@ -1,6 +1,4 @@
 let db = require("../database/models/index")
-const op = db.Sequelize.Op;
-let bcrypt = require("bcryptjs");
 
 
 

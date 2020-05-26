@@ -4,49 +4,7 @@ let bcrypt = require("bcryptjs");
 
 let resenaController = {
 
-      creacion: function(req,res){
-    
-                     res.render("detalleDeUnaPeli");
-    
-
-    },
-
-    guardado: function(req, res) {
-       
-                let errores = [];
-                  db.usuarios.findOne({
-                    
-                                  where : [ 
-                                
-                                        { email: {[op.like]: req.body.email }}
-                                 ],
-                             })
-                                     .then((usuarios) => {
-
-                               
-
-                    let resena = {
-                                  resenas: req.body.resenas,
-                                  rating: req.body.puntaje,
-                                fecha_de_creacion: req.body.creacion,
-                                 fecha_de_actualizacion: req.body.creacion,
-                                id_usuarios : usuarios.id,    
-                                id_peliculas: req.query.idDePeli  
-                                      }
-                                
-                                
-                        db.resenas.create(resena)
-                        
-                              })  
-                
-                .then(() => {
-                    res.redirect("/peliculas") 
-                        
-                    
-                } )
-
-            
-},
+  
 
 
     login: function(req,res){
@@ -80,7 +38,7 @@ let resenaController = {
         .then ( function(resenas){
             console.log(resenas);
             
-            res.render( "misResenas", {
+            res.render("misResenas", {
                 resenas: resenas
             })
             

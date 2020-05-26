@@ -9,16 +9,21 @@ let peliculasController = require ("../controllers/peliculasController");
 let resenaController = require ("../controllers/resenaController");
 
 let usuariosController = require ("../controllers/usuariosControllers");
+let homeController = require ("../controllers/homeController");
+let detalleDePeliController = require ("../controllers/detalleDePeliController");
 
 
 
-router.get("/", peliculasController.home );
-router.get("/", usuariosController.registracion );
-router.post("/", usuariosController.guardado );
+router.get("/", homeController.home );
 
-router.get("/search", usuariosController.search );
+router.get("/", homeController.registracion );
 
-router.post("/", peliculasController.home);
+router.post("/", homeController.guardado );
+
+router.get("/search", homeController.search );
+
+router.post("/", homeController.home);
+
 
 router.get("/porGenero", peliculasController.pelisPorGenero );
 
@@ -26,15 +31,19 @@ router.get("/listadoDeGeneros", peliculasController.listadoDeGeneros );
 
 router.get("/buscador", peliculasController.resultadoDeBusqueda);
 
-router.get("/detalle", peliculasController.detalleDeUnaPeli );
-
 router.get("/favoritos", peliculasController.peliPrefe );
 
-router.get("/detalle", resenaController.creacion);
-
-router.post("/detalle", resenaController.guardado);
 
 
+router.get("/detalle", detalleDePeliController.detalleDeUnaPeli );
+
+router.get("/detalle", detalleDePeliController.creacion);
+
+router.post("/detalle", detalleDePeliController.guardado);
+
+router.get("/detalle", detalleDePeliController.resenasDetalle );
+
+router.get("/usuario/:id", detalleDePeliController.detalle );
 
 
 

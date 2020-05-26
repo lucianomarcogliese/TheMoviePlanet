@@ -3,12 +3,9 @@ var router = express.Router();
 
 
 
-let usuariosController = require ("../controllers/usuariosControllers");
+
 let resenaController = require ("../controllers/resenaController");
 
-router.get("/", usuariosController.registracion );
-router.post("/", usuariosController.guardado );
-router.get("/detalle/:id", usuariosController.detalle );
 
 router.get("/misResenas", resenaController.login );
 
