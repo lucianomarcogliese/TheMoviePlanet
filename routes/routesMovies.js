@@ -8,7 +8,7 @@ var router = express.Router();
 let peliculasController = require ("../controllers/peliculasController");
 let resenaController = require ("../controllers/resenaController");
 
-let usuariosController = require ("../controllers/usuariosControllers");
+
 let homeController = require ("../controllers/homeController");
 let detalleDePeliController = require ("../controllers/detalleDePeliController");
 
