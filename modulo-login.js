@@ -7,7 +7,7 @@ let moduloLogin = {
                 email: email
             }
         })
-        .then(function(usuario) {
+        .then(function(usuarios) {
             return usuarios != null;
         })
     },

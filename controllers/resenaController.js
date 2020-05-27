@@ -6,20 +6,44 @@ let bcrypt = require("bcryptjs");
 let moduloLogin = require("../modulo-login")
 let resenaController = {
 
-  
+  nada: function(req,res){
+      res.render("resultadoDeResenas")
+  },
 
-
-    login: function(req,res){
+  login: function(req,res){
     res.render("misResenas")
 },
     validacion: function(req,res){
+           
+                moduloLogin.buscarPorEmail(req.body.email)
 
-    moduloLogin.validar(req.body.email, req.body.contraseña)
-    .then( resultado => {
-     console.log(resultado);
-     
-               res.send(resultado)
-        })
+                .then(usuario =>{
+                   
+                   if (usuario == null ) {
+                      
+                     res.send("ese email no existe")
+                       
+                       
+                   } else{
+                    bcrypt.compareSync(req.body.contraseña, usuario.contraseña)
+                           if(  bcrypt.compareSync(req.body.contraseña, usuario.contraseña) == false) {
+                               res.send("esa contraseña no existe")
+                           } else {
+                               res.send("iniciate sesion")
+                           }
+                    
+                         
+                    console.log(req.body.contraseña);
+                        console.log(usuario.contraseña);
+                        
+                        
+                }
+
+                    
+                    
+                })
+      
+   
 },  
     listadoDeResenas: function(req,res){
     db.usuarios.findOne(

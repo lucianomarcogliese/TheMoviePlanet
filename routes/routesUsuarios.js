@@ -9,6 +9,8 @@ let resenaController = require ("../controllers/resenaController");
 
 router.get("/misResenas", resenaController.login );
 
+router.post("/misResenas", resenaController.validacion );
+
 router.post("/misResenas", resenaController.listadoDeResenas );
 
 router.post("/misResenas/:id", resenaController.listadoDeResenas );
