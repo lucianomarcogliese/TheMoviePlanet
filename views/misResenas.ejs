@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-  
+    <h1>tus resenas son:</h1>
 
-  <form action="/usuario/misResenas" method="POST">
-    <div>
-        <label for="">Email</label>
-        <input type="email" name="email" value="">
-    </div>
-    <div>
-        <label for="">Contraseña</label>
-        <input type="password" name="contraseña" value="">
-    </div>
+    <% for (let i = 0; i < resultado.length; i++) { %>
+        <li>
+            <%=resultado[i].resenas%>
+        </li>
+
+        <form action="/usuario/delete/<%=resultado[i].id%>" method="POST">
+            <input type="submit" value="Borrar">
+        </form>
+    
    
-   
-    <input  type="submit" value="Enviar" >
-  
-</form>
+        <a href="/usuario/editar/<%=resultado[i].id%>">Editar</a> 
 
+    <% } %>
 
-
-
-
-
-
-  
 </body>
 </html>

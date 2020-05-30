@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/pagina.css">
+</head>
+<body>
+
+    <% if (typeof errores != "undefined") { %>
+        <ul style="color:red">
+            <% for (let i = 0; i < errores.length; i++) { %>
+                <li>
+                    <%=errores[i]%>
+                </li>
+            <% } %>
+        </ul>
+      <% } %>
+
+    <form action="/usuario/editar/<%=resultado.id%>" method="POST">
+        <br>
+        <div>
+            <label for="">Email:</label>
+            <input type="text" name="email" value="" placeholder="Ingresa tu email" >
+        </div>
+        <br>
+        <br>
+
+        <div>
+            <label for="">Contraseña:</label>
+            <input type="password" name="contraseña" value=""  placeholder="Ingresa tu email" >
+        </div>
+        <br>
+        <br>
+
+       
+        <div>
+            <label for="">Reseña:</label>
+            <input type="text" name="resenas" value="<%=resultado.resenas%>">
+        </div>
+        <br>
+        <br>
+
+        <div>
+            <label for="">Rating</label>
+            <input type="text" name="rating" value="<%=resultado.rating%>">
+        </div>
+        <br>
+        <br>
+
+        <div>
+            <label for="">Fecha de actualizacion</label>
+            <input type="date" name="fecha_de_actualizacion" value="<%=resultado.fecha_de_actualizacion%>">
+        </div>
+        <br>
+        <br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    
+</body>
+</html>

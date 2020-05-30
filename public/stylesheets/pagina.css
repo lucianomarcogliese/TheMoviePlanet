@@ -52,7 +52,18 @@ li:hover h1.headersHome{
   text-align: center;
   font-size: 25px;
 }
+.misResenas{
 
+    /*  background-color: #3955D3; */
+    margin-top: 15%; 
+    text-align: center;
+     margin-left: 30%;
+     margin-right: 30%;
+     border-style: solid;
+     border-color: white;
+     
+   
+}
 #pelispref{
   display: none;
 }

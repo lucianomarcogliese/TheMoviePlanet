@@ -29,7 +29,7 @@ let detalleDePeliController = {
             })
             console.log(resenas);
             
-        })
+        }) 
 
        
        
@@ -41,6 +41,10 @@ let detalleDePeliController = {
 
 
 },
+
+
+
+
 
 guardado: function(req, res) {
 
@@ -54,18 +58,49 @@ let errores = [];
             })
                     .then((usuarios) => {
 
-               if (usuarios == null){
-                   errores.push("Ese email no existe")
-                   res.render("detalleDeUnaPeli", {
-                       errores:errores
-                     
-                   } )
+                            
+                   if (usuarios == null ) {
+                      
+                    errores.push("ese email no existe")
+                      
+                  } else if(bcrypt.compareSync(req.body.contraseña, usuarios.contraseña) == false) {
+                              errores.push("esa contraseña no existe")
+                              
+                          }
+                          console.log(1);
+                          
+                          if (errores.length > 0) {
+                          
+                          return  db.resenas.findAll({
+               
+                                where : [ 
+                                    { id_peliculas: {[op.like]: req.query.idDePeli }}
+                              ],
+                        
+                              include: [
+                                {association: "usuario"},
+                            ]  
+                              
+                            })
+                            .then(function(resenas){
+                                let idPelicula = req.query.idDePeli
+                                
+                                res.render("detalleDeUnaPeli", {
+                                    errores:errores,
+                                    resenas : resenas,
+                                idPelicula : idPelicula
+                                })
+                                
+                                
+                                console.log(resenas);
+                                
+                            }) 
+                    
+                              
+                         
+                          } else {
 
-                   console.log(errores.length);
-                                         
-               } else { 
-
-   let resena = {
+         let resena = {
                  resenas: req.body.resenas,
                  rating: req.body.puntaje,
                fecha_de_creacion: req.body.creacion,
@@ -74,20 +109,25 @@ let errores = [];
                id_peliculas: req.query.idDePeli  
                      }
                                  
-       db.resenas.create(resena)
+      return db.resenas.create(resena)
        .then(( ) => {
            res.redirect("/peliculas/detalle/?idDePeli=" + req.query.idDePeli) 
-       }
-       
-                        )    }  })  
+       })
+    }   })  
            
+        
 
 
 },
 
-resenasDetalle: function(req,res){
-  
-},
+
+
+
+
+
+
+
+
 
 detalle: function (req,res){
     db.usuarios.findByPk(req.params.id, {

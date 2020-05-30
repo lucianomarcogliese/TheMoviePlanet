@@ -7,13 +7,19 @@ var router = express.Router();
 let resenaController = require ("../controllers/resenaController");
 
 
-router.get("/misResenas", resenaController.login );
+router.get("/login", resenaController.login );
+
 
 router.post("/misResenas", resenaController.validacion );
+ 
 
-router.post("/misResenas", resenaController.listadoDeResenas );
+router.post("/delete/:id", resenaController.borrar );
 
-router.post("/misResenas/:id", resenaController.listadoDeResenas );
+router.get("/editar/:id", resenaController.editar);
+
+router.post("/editar/:id", resenaController.actualizar);
+
+
 
 
 

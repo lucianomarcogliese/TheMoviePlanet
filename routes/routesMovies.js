@@ -41,7 +41,7 @@ router.get("/detalle", detalleDePeliController.creacion);
 
 router.post("/detalle", detalleDePeliController.guardado);
 
-router.get("/detalle", detalleDePeliController.resenasDetalle );
+
 
 router.get("/usuario/:id", detalleDePeliController.detalle );
 
