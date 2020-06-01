@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/misResenas.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
 
 <% if (resultado.length == 0) { %> 
-            <p>Necesitas estar logueado para acceder a esta seccion.</p>
-            <a href="usuario/login"> Loguiate!</a>
-    <%}%>
+            <p class="necesitas">Necesitas estar logueado para acceder a esta seccion.</p>
+            <a href="/usuario/pruebaLogin"> Loguiate!</a>
 
-    <h1>tus resenas son:</h1>
+    <%} else {%>
+    <h1>Tus resenas son:</h1>
 
     <% for (let i = 0; i < resultado.length; i++) { %>
-        <li>
+        <li class="resena">
             <%=resultado[i].resenas%>
         </li>
 
@@ -26,7 +28,20 @@
    
         <a href="/usuario/editar/<%=resultado[i].id%>">Editar</a> 
 
-    <% } %>
-
+    <% }  } %>
+    <footer>
+        <img src="/images/tmdblogo.png" class="tmdblogo">
+      
+        <div class="nombres">
+        <ul>
+          <li>MATIAS GALLARDO</li>
+          <li>JUAN IGNACIO BEDOIAN</li>
+          <li>LUCIANO MARCOGLIESE</li>
+        </ul>
+      </div>
+           </div>
+      
+      </footer>
+      
 </body>
 </html>

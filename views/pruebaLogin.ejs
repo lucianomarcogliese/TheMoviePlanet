@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/stylesheets/pruebaLogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -20,25 +22,41 @@
         <form action="/usuario/pruebaLogin"  class="misResenas" method="POST">
           <br>
           <br>
-          <div>
-              <label for=""></label>
+          <div class="mail">
+              <label class="email" for="">Email:</label>
+              <br>
               <input type="email" name="pruebaEmail" value="" placeholder="Ingresa tu email">
           </div>
           <br>
           <br>
-          <div>
-              <label for=""></label>
-              <input type="password" name="pruebaContraseña" value="" placeholder="Ingresa tu contraseña">
+          <div class="contra">
+              <label class="contraseña" for="">Contraseña:</label>
+              <br>
+              <input class="pass" type="password" name="pruebaContraseña" value="" placeholder="Ingresa tu contraseña">
           </div>
          <br>
          <br>
-         <div>
-            <label for="">Recordame</label>
+         <div class="reco">
+            <label class="remember" for="">Recordame</label>
             <input type="checkbox" name="recordame" value="" >
         </div>
-          <input  type="submit" value="Login" >
-        
+        <div class="sub">
+          <input class="uk-button uk-button-default uk-margin uk-button-primary" type="submit" value="Login" >
+        </div>
       </form>
-    
+      <footer>
+          <div class="padre">
+        <img src="/images/tmdblogo.png" class="tmdblogo">
+
+        <div class="nombres">
+        <ul>
+          <li>MATIAS GALLARDO</li>
+          <li>JUAN IGNACIO BEDOIAN</li>
+          <li>LUCIANO MARCOGLIESE</li>
+        </ul>
+      </div>
+           </div>
+        </div>
+     </footer>
 </body>
 </html>

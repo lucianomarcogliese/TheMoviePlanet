@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+html{
+  cursor: url(/images/giphy.gif),default;
+  height: 100%;
+  width: 100%;
+}
+body{
+  cursor: url(/images/giphy.gif),default;
+  background-size: cover;
+  background-image: url("/images/Fondo.png");
+  height: 100%;
+  width: 100%;
+}
+.mail{
+    margin-left: 50%;
+}
+.email {
+padding-right: 20%;
+color: white;
+text-align: center;
+
+}
+.contraseña{
+    padding-right: 20%;
+color: white;
+text-align: center;
+
+}
+.contra{
+    margin-left: 50%;
+}
+.reco{
+    margin-left: 50%;
+}
+.remember{
+    color: white;
+}
+.sub{
+    margin-left: 50%; 
+}
+
+
+
+footer{
+    background-color: rgba(112, 148, 181, 0.65);
+ 
+    overflow: hidden;
+
+}
+
+.nombres {
+  font-family: Rubik;
+  font-size: small;
+  color: white;
+  text-align: right;
+  float: right;
+  padding-top: 1%;
+
+}
+
+.nombres ul {
+    
+  border-right: 5px solid #ffffff;
+    list-style-type: none;
+    padding-right: 17px;
+}
+.tmdblogo{
+    
+    width: 7%;
+      float: right;
+      padding: 1%;
+      padding-left: 1%;
+      padding-top: 0.7%;
+  }
+ 
