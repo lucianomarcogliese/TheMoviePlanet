@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <% if (typeof errores != "undefined") { %>
+        <ul style="color:red">
+            <% for (let i = 0; i < errores.length; i++) { %>
+                <li>
+                    <%=errores[i]%>
+                </li>
+            <% } %>
+        </ul>
+      <% } %>
+      
+        <form action="/usuario/pruebaLogin"  class="misResenas" method="POST">
+          <br>
+          <br>
+          <div>
+              <label for=""></label>
+              <input type="email" name="pruebaEmail" value="" placeholder="Ingresa tu email">
+          </div>
+          <br>
+          <br>
+          <div>
+              <label for=""></label>
+              <input type="password" name="pruebaContraseña" value="" placeholder="Ingresa tu contraseña">
+          </div>
+         <br>
+         <br>
+         <div>
+            <label for="">Recordame</label>
+            <input type="checkbox" name="recordame" value="" >
+        </div>
+          <input  type="submit" value="Login" >
+        
+      </form>
+    
+</body>
+</html>

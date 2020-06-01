@@ -50,6 +50,8 @@ db.usuarios.findAll(
     
 })
 },
+
+
    
 }
 

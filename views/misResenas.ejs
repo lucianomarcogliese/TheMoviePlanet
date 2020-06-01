@@ -6,6 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+
+<% if (resultado.length == 0) { %> 
+            <p>Necesitas estar logueado para acceder a esta seccion.</p>
+            <a href="usuario/login"> Loguiate!</a>
+    <%}%>
+
     <h1>tus resenas son:</h1>
 
     <% for (let i = 0; i < resultado.length; i++) { %>

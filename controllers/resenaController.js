@@ -6,45 +6,24 @@ let bcrypt = require("bcryptjs");
 let moduloLogin = require("../modulo-login")
 let resenaController = {
 
-  login: function(req,res){
-    res.render("login")
-    },
+ 
+ prueba: function(req, res){
+     res.render("misResenas")
+ },
 
     validacion: function(req,res){
            
-            let errores = [];
-                moduloLogin.buscarPorEmail(req.body.email)
+                if(req.session.usuarioLogueado != undefined){
 
-                  .then(usuario =>{
-                   
-                   
-                   
-                   if (usuario == null ) {
-                      
-                     errores.push("ese email no existe")
-                       
-                   } else if(bcrypt.compareSync(req.body.contraseña, usuario.contraseña) == false) {
-                               errores.push("esa contraseña no existe")
-                               
-                           }
-                           console.log(1);
-                           
-                           if (errores.length > 0) {
-                               console.log(errores);
-                               
-                            res.render("login", {
-                                errores:errores,
-                                
-                            })
-                           }
-                           else {
+               
                             db.usuarios.findOne(
                                 {
                                     where : [ 
-                                        { email: {[op.like]: req.body.email }}
+                                        { email: {[op.like]: req.session.usuarioLogueado.email }}
                                   ],
                                      })
                                 .then (function(usuario){
+                              console.log(usuario);
                               
                                   return  db.resenas.findAll({
                                          where: [
@@ -63,9 +42,12 @@ let resenaController = {
                                
                                   
                       
-                }
-              
-                })
+                
+                            } else {
+                                
+                                    res.send("neceistas estar logueado papa")
+                            }
+                
       
     },  
 
@@ -115,6 +97,57 @@ let resenaController = {
         })
     },
 
+    pruebaLogin: function(req,res) {
+        return res.render("pruebaLogin")
+    },
+
+    processLogin: function(req,res){
+                
+        let errores = [];
+        moduloLogin.buscarPorEmail(req.body.pruebaEmail)
+
+          .then(usuario =>{
+              
+           if (usuario == null ) {
+              
+             errores.push("ese email no existe")
+               
+           } else if(bcrypt.compareSync(req.body.pruebaContraseña, usuario.contraseña) == false) {
+                       errores.push("esa contraseña no existe")
+                       
+                   }
+                   
+                   if (errores.length > 0) {
+                       
+                    res.render("pruebaLogin", {
+                        errores:errores,
+                        
+                    })
+                   }
+                   else {
+                      
+                let usuarioALoguearse = usuario
+           
+                req.session.usuarioLogueado =  usuarioALoguearse;
+                  
+                if (req.body.recordame != undefined) {
+                    res.cookie("recordame" , usuarioALoguearse.email , {maxAge:60000 })
+                }
+                console.log();
+                
+                  res.redirect("/peliculas")
+                  
+        }
+      
+        })
+
+
+
+
+
+
+
+    }
 
 
 
