@@ -9,6 +9,7 @@ body{
   cursor: url(/images/giphy.gif),default;
   background-size: cover;
   background-image: url("/images/Fondo.png");
+  height: 100%;
 }
 
 h1.a{
@@ -20,5 +21,13 @@ h1.a{
 }
 
 .b{
+
     font-size: 30px;
+ 
+}
+footer{
+  height: 12vh;
+  width: 100%;
+
+  
 }
