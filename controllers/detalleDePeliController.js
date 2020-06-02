@@ -102,7 +102,7 @@ let errores = [];
 
          let resena = {
                  resenas: req.body.resenas,
-                 rating: req.body.puntaje,
+                 rating: req.body.estrellas,
                fecha_de_creacion: req.body.creacion,
                 fecha_de_actualizacion: req.body.creacion,
                id_usuarios : usuarios.id,    

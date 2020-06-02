@@ -28,6 +28,7 @@ h1.a{
 footer{
   height: 12vh;
   width: 100%;
-
+  position: absolute;
+  bottom: 0;
   
 }

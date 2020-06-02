@@ -12,25 +12,7 @@
     <title>The Movie Planet</title>
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light idea" id="navbar">
-
-      <a class="navbar-brand" href="/peliculas"> <img src="/images/logo.png" class="loguito" alt=""> </a>
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="/peliculas/listadoDeGeneros">Genres<span class="sr-only">(current)</span></a>
-        </li>
-        <li id="pelispref"class="nav-item">
-          <a class="nav-link" href="/peliculas/peliPreferida">Favorite movies</a>
-        </li>
-      </ul>
-      <form method="get" action="/peliculas/buscador" class="uk-search uk-search-default buscar">
-          <span class="uk-search-icon-flip" uk-search-icon></span>
-          <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search" >
-      </form>
-    </div>
-  </nav>
-    </header>
+    <%- include("header") %>
 
     <section>
       <aside class="posterPelicula">
@@ -101,11 +83,11 @@
 
   <div class="listadoDeResenas"> 
 
-  <ul>  
-          <li style="list-style: none;">   <%=resenas[i].rating %> ★ </li>  
-          <li style="list-style: none;">   <%=resenas[i].usuario.nombre %>  </li>  
-          <li style="list-style: none;"> <%=resenas[i].resenas %> </li>
-          <li style="list-style: none;"> Ultima vez actualizada: <%=resenas[i].fecha_de_actualizacion %> </li>
+  <ul class= "resenitas">  
+          <li class="reseñas" style="list-style:none">     <%=resenas[i].rating %> ★  </li> 
+         <li class="reseñas" style="list-style: none;">      <%=resenas[i].usuario.nombre %>    </li> 
+          <li class="reseñas" style="list-style: none;"> <%=resenas[i].resenas %> </li>
+          <li class="reseñas" style="list-style: none;"> Ultima vez actualizada: <%=resenas[i].fecha_de_actualizacion %> </li>
                 
       </ul>
     </div>
@@ -144,16 +126,6 @@
         <input type="password" name= "contraseña" placeholder="Ingresa tu contraseña">
     </div> 
             <br>
-  
-        
-    <div>
-  
-            <label class="labelsDeResenas" for=""></label>
-            <input type="text" name= "puntaje" placeholder="Puntaje de la pelicula">
-  
-    </div>
-            <br>
-  
               
       <div>
               <label class="labelsDeResenas" for=""> </label>
@@ -171,7 +143,29 @@
       
     </div>
             <br>
-            <br>
+        <h4>Puntaje</h4>
+            <p class="clasificacion">
+              <input id="radio1" type="radio" name="estrellas" value="10">
+              <label for="radio1">★</label>
+              <input id="radio2" type="radio" name="estrellas" value="9">
+              <label for="radio2">★</label>
+              <input id="radio3" type="radio" name="estrellas" value="8">
+              <label for="radio3">★</label>
+              <input id="radio4" type="radio" name="estrellas" value="7">
+              <label for="radio4">★</label>
+              <input id="radio5" type="radio" name="estrellas" value="6">
+              <label for="radio5">★</label>
+              <input id="radio6" type="radio" name="estrellas" value="5">
+              <label for="radio6">★</label>
+              <input id="radio7" type="radio" name="estrellas" value="4">
+              <label for="radio7">★</label>
+              <input id="radio8" type="radio" name="estrellas" value="3">
+              <label for="radio8">★</label>
+              <input id="radio9" type="radio" name="estrellas" value="2">
+              <label for="radio9">★</label>
+              <input id="radio10" type="radio" name="estrellas" value="1">
+              <label for="radio10">★</label>
+            </p>
   
             <input class="uk-button uk-button-default uk-margin uk-button-primary" type="submit" value="Enviar">
   
@@ -182,58 +176,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer>
-      <img src="/images/tmdblogo.png" class="tmdblogo">
-
-      <div class="nombres">
-      <ul>
-        <li>MATIAS GALLARDO</li>
-        <li>JUAN IGNACIO BEDOIAN</li>
-        <li>LUCIANO MARCOGLIESE</li>
-      </ul>
-    </div>
-         </div>
-
-   </footer>
-
-
-
-
+  <%- include("footer") %>
 
 
 

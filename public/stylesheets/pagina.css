@@ -38,9 +38,7 @@ body{
 #listaPopulares{
   width: 20%;
 }
-/* .headersHome{
-display: none;
-} */
+
 h1.headersHome{
 display: none;
 }
@@ -54,7 +52,7 @@ li:hover h1.headersHome{
 }
 .misResenas{
 
-    /*  background-color: #3955D3; */
+    
     margin-top: 15%; 
     text-align: center;
      margin-left: 30%;
@@ -63,6 +61,39 @@ li:hover h1.headersHome{
      border-color: white;
      
    
+}
+
+.caja {
+   margin-left: 3%;	
+   border:1px solid #d9d9d9;
+   height:30px;
+   overflow: hidden;
+   width: 150px;
+   position:relative;
+   
+}
+select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 30px;
+   padding: 5px;
+   width: 250px;
+}
+select:focus{ outline: none;}
+
+.caja::after{
+	content:"\025be";
+	display:table-cell;
+	padding-top:7px;
+	text-align:center;
+	width:30px;
+	height:30px;
+	background-color:#d9d9d9;
+	position:absolute;
+	top:0;
+	right:0px;	
+	pointer-events: none;
 }
 #pelispref{
   display: none;
@@ -133,7 +164,6 @@ padding-bottom: 0px;
 padding-bottom: 0px;
 padding-top: 0px;
 }
-
 .navbar-brand{
   width: 111px;
 margin-right: 17px;
@@ -145,9 +175,9 @@ button.estrellita {
     position: absolute;
 }
 
-
-
-
+#pruebitaLogin{
+  margin-left: 20px;
+}
 
 
 

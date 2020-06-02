@@ -13,9 +13,7 @@ body{
   height: 100%;
   width: 100%;
 }
-.mail{
-    margin-left: 50%;
-}
+
 .email {
 padding-right: 20%;
 color: white;
@@ -28,27 +26,26 @@ color: white;
 text-align: center;
 
 }
-.contra{
-    margin-left: 50%;
-}
-.reco{
-    margin-left: 50%;
-}
-.remember{
-    color: white;
-}
-.sub{
-    margin-left: 50%; 
+.pruebaLogin {
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-style: solid;
+  border-color: white;
+  margin-bottom: 2%;
+  
 }
 
 
 
 footer{
     background-color: rgba(112, 148, 181, 0.65);
- 
-    overflow: hidden;
+  width: 100%;
+    position: absolute;
+    bottom: 0;
 
 }
+
 
 .nombres {
   font-family: Rubik;
@@ -74,4 +71,6 @@ footer{
       padding-left: 1%;
       padding-top: 0.7%;
   }
+
+  
  

@@ -24,6 +24,14 @@ router.get("/search", homeController.search );
 
 router.post("/", homeController.home);
 
+/* EXTRAS */
+
+router.get("/mejoresPuntuadas", homeController.mejoresPuntuadas );
+
+router.get("/peoresPuntuadas", homeController.peoresPuntuadas );
+
+router.get("/resenasRecientes", homeController.recientes );
+
 
 router.get("/porGenero", peliculasController.pelisPorGenero );
 
@@ -44,6 +52,8 @@ router.post("/detalle", detalleDePeliController.guardado);
 
 
 router.get("/usuario/:id", detalleDePeliController.detalle );
+
+
 
 
 
