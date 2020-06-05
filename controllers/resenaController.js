@@ -102,22 +102,20 @@ let resenaController = {
     },
 
     processLogin: function(req,res){
+
+        
                 
         let errores = [];
         moduloLogin.buscarPorEmail(req.body.pruebaEmail)
 
           .then(usuario =>{
               
-           if (usuario == null ) {
-              
-             errores.push("ese email no existe")
-               
+           if (usuario == null ) {      
+             errores.push("ese email no existe")        
            } else if(bcrypt.compareSync(req.body.pruebaContraseña, usuario.contraseña) == false) {
-                       errores.push("esa contraseña no existe")
-                       
+                       errores.push("esa contraseña no existe")         
                    }
-                   
-                   if (errores.length > 0) {
+                        if (errores.length > 0) {
                        
                     res.render("pruebaLogin", {
                         errores:errores,
@@ -130,15 +128,18 @@ let resenaController = {
            
                 req.session.usuarioLogueado =  usuarioALoguearse;
                   
+                console.log(1);
+                
                 if (req.body.recordame != undefined) {
                     res.cookie("recordame" , usuarioALoguearse.email , {maxAge:60000 })
                 }
-                console.log();
+    
                 
-                  res.redirect("/peliculas")
+                
+                
                   
         }
-      
+        res.redirect("/peliculas")
         })
 
 

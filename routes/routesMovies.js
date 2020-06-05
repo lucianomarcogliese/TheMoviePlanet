@@ -24,6 +24,11 @@ router.get("/search", homeController.search );
 
 router.post("/", homeController.home);
 
+router.get('/logout', function (req, res) {
+    req.session.destroy();
+    res.redirect("/peliculas")
+  });
+
 /* EXTRAS */
 
 router.get("/mejoresPuntuadas", homeController.mejoresPuntuadas );

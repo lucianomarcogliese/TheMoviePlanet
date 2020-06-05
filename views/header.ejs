@@ -34,12 +34,16 @@
          </div>
       </select>
     </li>
-
-    
+               
+<% if (variableUsuario == undefined){ %> 
     <li id="pruebitaLogin" class="nav-item">
         <a  style="color: gold"; class="uk-button uk-button-default btn btn-outline-warning nav-link" href="/usuario/pruebaLogin">Login </a>
       </li>
-      
+    <%} else {   %>
+        <li id="pruebitaLogin" class="nav-item">
+            <a  style="color: gold"; class="uk-button uk-button-default btn btn-outline-warning nav-link" href="/peliculas/logout">Logout </a>
+          </li>
+        <%  } %>
     </ul>
     
 
@@ -48,8 +52,14 @@
                     <span class="uk-search-icon-flip" uk-search-icon></span>
                     <input class="form-control mr-sm-2" name="q" type="search" placeholder="Buscador de peliculas" aria-label="Search" >
                 </form>
+                <% if (variableUsuario ==undefined) { %>
+               
     <a  id="login" style="color:gold"; class="uk-button uk-button-default btn btn-outline-warning" href="#modal-sections" uk-toggle>Registrate</a>
-
+              <%} else { %>
+                <li style="list-style: none;"> 
+                <h4> Bienvenido <%=variableUsuario.nombre%> !! </h4>
+                <% } %>
+            </li>%>
 
 </form>
 
