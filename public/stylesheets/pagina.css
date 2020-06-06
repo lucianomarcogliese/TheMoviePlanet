@@ -9,8 +9,15 @@ body{
   cursor: url(/images/giphy.gif),default;
   background-size: cover;
   background-image: url("/images/Fondo.png");
+  
+}
+body.z{
+  height: 100%;
 }
 
+h1.b{
+  color: white;
+}
 
 .saludo {
   font-family: Poppins;
@@ -41,6 +48,7 @@ body{
 
 h1.headersHome{
 display: none;
+
 }
 
 li:hover h1.headersHome{
@@ -103,6 +111,8 @@ footer{
     height: 12vh;
     overflow: hidden;
 }
+
+
 
 .nombres {
   font-family: Rubik;
