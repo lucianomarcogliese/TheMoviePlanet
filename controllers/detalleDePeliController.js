@@ -43,18 +43,18 @@ let detalleDePeliController = {
 },
 
 
-
-
-
 guardado: function(req, res) {
 
+                        if (req.session.usuarioLogueado == undefined ) {
+                            
+                       
 let errores = [];
- db.usuarios.findOne({
+                db.usuarios.findOne({
    
                  where : [ 
                
                        { email: {[op.like]: req.body.email }}
-                ],
+                        ],
             })
                     .then((usuarios) => {
 
@@ -97,7 +97,7 @@ let errores = [];
                             }) 
                     
                               
-                         
+ 
                           } else {
 
          let resena = {
@@ -115,7 +115,22 @@ let errores = [];
        })
     }   })  
            
-        
+}  else { 
+    let resena = {
+        resenas: req.body.resenas,
+        rating: req.body.estrellas,
+      fecha_de_creacion: req.body.creacion,
+       fecha_de_actualizacion: req.body.creacion,
+      id_usuarios : req.session.usuarioLogueado.id,    
+      id_peliculas: req.query.idDePeli  
+            }
+                                                
+return db.resenas.create(resena)
+.then(( ) => {
+  res.redirect("/peliculas/detalle/?idDePeli=" + req.query.idDePeli) 
+})
+
+}
 
 
 },

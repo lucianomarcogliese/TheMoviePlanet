@@ -8,7 +8,9 @@ let homeController = {
 
     home: function(req,res){
         res.render ("home")
+        console.log(req.cookies.recordame)
     },
+
 
     registracion: function(req,res){
     
@@ -53,10 +55,13 @@ guardado: function(req, res) {
 search: function (req,res){
 db.usuarios.findAll(
     {
-        where : [ 
-           
-            { email: {[op.like]: req.query.search + "%"   }}
-        ],
+        where : { 
+
+            [op.or]: {
+
+                    email: {[op.like]: req.query.search + "%"   },
+                    nombre: {[op.like]: req.query.search + "%"   }
+                }   }
        
     }
 )
@@ -81,6 +86,10 @@ mejoresPuntuadas : function(req,res){
             order : [ 
                 [ "rating", "DESC"]  
         ],
+        
+        include: [
+            {association: "usuario"},
+        ]  
         }
     )
 
@@ -97,21 +106,31 @@ mejoresPuntuadas : function(req,res){
  
     db.resenas.findAll(
         {
+            
             where: [
                 { rating: { [op.lt]: 5} }
             ], 
             order : [ 
                 [ "rating", "ASC"]  
         ],
+        
+        limit: 8,
+       
+        include: [
+            {association: "usuario"},
+        ]  
+       
         }
     )
 
     .then(function(resenas) {
         
-        res.render("peoresPuntuadas", {
+      res.render("peoresPuntuadas", {
             resenas: resenas
         })
+    
     })
+
     
  },
 
@@ -124,6 +143,10 @@ mejoresPuntuadas : function(req,res){
             order : [ 
                 [ "fecha_de_actualizacion", "DESC"]  
         ],
+        
+        include: [
+            {association: "usuario"},
+        ]  
         }
     )
 

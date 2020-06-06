@@ -3,13 +3,14 @@
 <head>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="stylesheet" href="/stylesheets/pagina.css">
+    <link rel="stylesheet" href="/stylesheets/detallePeli.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/stylesheets/usuarioresultado.css">
+ 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -19,18 +20,19 @@
 
 
 <% if ( usuarios.length == 0) { %>
-                <h4 style="color: white;">No se encontro ningun usuario</h4>
+                <h4 class= "titulos" style="color: white;">No se encontro ningun usuario</h4>
 <% } else {%>
 
-  <h1 class="a">Usuarios encontrados:</h1>
+  <h1 class="a titulos">Usuarios encontrados:</h1>
+  <h5 style="color:white"> (Click para ir al detalle del usuario)</h5>
     <% for (let i = 0; i< usuarios.length; i++) { %>
 
        
         <ul> 
         <li>
             <a class="b" href="/peliculas/usuario/<%=usuarios[i].id%>" >
-             Nombre: <%=usuarios[i].nombre %>
-             Email: <%=usuarios[i].email %>
+             <%=usuarios[i].nombre %>
+            
         </li>
        
     </ul>

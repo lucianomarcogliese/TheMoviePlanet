@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-
+    <link rel="stylesheet" href="/stylesheets/resenas.css">
+    <link rel="stylesheet" href="/stylesheets/resenas.css">
     <link rel="stylesheet" href="/stylesheets/detallePeli.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -81,13 +82,13 @@
 
 <% for (let i = 0; i< resenas.length; i++) { %>
 
-  <div class="listadoDeResenas"> 
+  <div class="puntuadas"> 
 
-  <ul class= "resenitas">  
-          <li class="reseñas" style="list-style:none">     <%=resenas[i].rating %> ★  </li> 
-         <li class="reseñas" style="list-style: none;">      <%=resenas[i].usuario.nombre %>    </li> 
-          <li class="reseñas" style="list-style: none;"> <%=resenas[i].resenas %> </li>
-          <li class="reseñas" style="list-style: none;"> Ultima vez actualizada: <%=resenas[i].fecha_de_actualizacion %> </li>
+  <ul class= "">  
+          <li class="" style="list-style:none">     <%=resenas[i].rating %> ★  </li> 
+         <li class="" style="list-style: none;">      <%=resenas[i].usuario.nombre %>    </li> 
+          <li class="" style="list-style: none;"> <%=resenas[i].resenas %> </li>
+          <li class="" style="list-style: none;"> Ultima vez actualizada: <%=resenas[i].fecha_de_actualizacion %> </li>
                 
       </ul>
     </div>
@@ -114,7 +115,8 @@
 <form  class= "formularioResena resenas" action="/peliculas/detalle?idDePeli=<%=idPelicula%>" style= "display: none;" method="POST"  > 
                         
         <br> 
-                    
+        <% if (variableUsuario == undefined){ %> 
+       
   <div>
         <label class="labelsDeResenas" for="" ></label>
         <input type="text" name= "email" placeholder="Ingresa tu email">
@@ -126,7 +128,7 @@
         <input type="password" name= "contraseña" placeholder="Ingresa tu contraseña">
     </div> 
             <br>
-              
+            <%  }%>                
       <div>
               <label class="labelsDeResenas" for=""> </label>
               <input type="date" name= "creacion">
@@ -139,8 +141,8 @@
   
      <div>
       <label class="labelsDeResenas" for=""> </label>
-      <input  class="reseñitas" type="text" name= "resenas"  height="50%" placeholder="Aqui tus comentarios de la pelicula">
-      
+     <textarea name="resenas" id="" cols="30" rows="10"></textarea>
+
     </div>
             <br>
         <h4>Puntaje</h4>

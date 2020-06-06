@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: "Secreto!",
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: false
 }));
 app.use(recordameMiddleware)
 app.use(variableMiddleware)

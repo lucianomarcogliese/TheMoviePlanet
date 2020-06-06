@@ -45,7 +45,8 @@ let resenaController = {
                 
                             } else {
                                 
-                                    res.send("neceistas estar logueado papa")
+                                   let faltaLogin = "Necesitas estar logiado para acceder a tus reseñas"
+                                   res.render("misResenas", {faltaLogin:faltaLogin})
                             }
                 
       
@@ -76,7 +77,6 @@ let resenaController = {
             })
         
     },
-
     actualizar: function(req, res){
   
   
@@ -128,7 +128,7 @@ let resenaController = {
            
                 req.session.usuarioLogueado =  usuarioALoguearse;
                   
-                console.log(1);
+                console.log(usuarioALoguearse);
                 
                 if (req.body.recordame != undefined) {
                     res.cookie("recordame" , usuarioALoguearse.email , {maxAge:60000 })

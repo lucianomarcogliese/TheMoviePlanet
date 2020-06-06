@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/stylesheets/pagina.css">
+    <link rel="stylesheet" href="/stylesheets/resenas.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
@@ -17,17 +18,22 @@
 
 
 
-    <h1>Listado de reseñas mejores puntuadas</h1>
-    <ul>
-        <% for(let i = 0; i < resenas.length; i++) { %>
-            <li>
-                <a href="/peliculas/usuario/<%=resenas[i].id_usuarios%>"> 
-        <%=resenas[i].resenas%>
-         - Rating: <%=resenas[i].rating%>
-        </a>
-            </li>
-        <% } %>
-    </ul>
+    <h1 class="titulos">Listado de reseñas mejores puntuadas</h1>
+   
+        
+    <% for(let i = 0; i < resenas.length; i++) { %>
+  <div class="puntuadas ">  
+        <ul >
+                <a  href="/peliculas/usuario/<%=resenas[i].id_usuarios%>">
+                <li style="list-style: none;"><h3 style="color: white;"> <%=resenas[i].usuario.nombre %></h3></li>  </a>
+                <li  style="list-style: none;">   <%=resenas[i].resenas%>    </li>
+                <li  style="list-style: none;">   <%=resenas[i].rating%> ★</li>
+                <li  style="list-style: none;">  Ult. actualizacion: <%=resenas[i].fecha_de_actualizacion%></li>
+        </ul>
+    </div>  
+            <% } %>
+    
+
 
 
     <%- include("footer") %>
