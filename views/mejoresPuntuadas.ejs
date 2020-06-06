@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body class="z">
+<body >
   
     <%- include("header") %>
 
@@ -22,8 +22,8 @@
    
         
     <% for(let i = 0; i < resenas.length; i++) { %>
-  <div class="puntuadas ">  
-        <ul >
+    <div class="puntuadas uk-flex-inline" style="margin: 2%;">  
+         <ul >
                 <a  href="/peliculas/usuario/<%=resenas[i].id_usuarios%>">
                 <li style="list-style: none;"><h3 style="color: white;"> <%=resenas[i].usuario.nombre %></h3></li>  </a>
                 <li  style="list-style: none;">   <%=resenas[i].resenas%>    </li>

@@ -12,7 +12,7 @@ let homeController = {
     },
 
 
-    registracion: function(req,res){
+ registracion: function(req,res){
     
         res.render("registracion");
     
@@ -101,9 +101,9 @@ mejoresPuntuadas : function(req,res){
     })
     
  },
+ 
  peoresPuntuadas : function(req,res){
 
- 
     db.resenas.findAll(
         {
             
@@ -114,8 +114,6 @@ mejoresPuntuadas : function(req,res){
                 [ "rating", "ASC"]  
         ],
         
-        limit: 8,
-       
         include: [
             {association: "usuario"},
         ]  
@@ -130,7 +128,6 @@ mejoresPuntuadas : function(req,res){
         })
     
     })
-
     
  },
 

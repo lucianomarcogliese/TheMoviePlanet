@@ -169,7 +169,12 @@ padding-bottom: 0px;
   margin-right: 0%;
   height: 20%;
 }
-
+.resultados {
+  
+   
+    height: 70vh;
+  
+}
 #navbar{
 padding-bottom: 0px;
 padding-top: 0px;

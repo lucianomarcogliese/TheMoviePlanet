@@ -16,9 +16,6 @@ let peliculasController = {
         res.render ("resultadoDeBusqueda")
     },
    
-    
-
-
     peliPrefe: function(req,res){
         res.render ("peliculasFavoritas")
     },

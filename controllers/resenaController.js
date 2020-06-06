@@ -7,9 +7,9 @@ let moduloLogin = require("../modulo-login")
 let resenaController = {
 
  
- prueba: function(req, res){
+     prueba: function(req, res){
      res.render("misResenas")
- },
+    },
 
     validacion: function(req,res){
            
@@ -45,7 +45,7 @@ let resenaController = {
                 
                             } else {
                                 
-                                   let faltaLogin = "Necesitas estar logiado para acceder a tus reseñas"
+                                   let faltaLogin = "Necesitas estar logueado para acceder a tus reseñas"
                                    res.render("misResenas", {faltaLogin:faltaLogin})
                             }
                 
@@ -59,7 +59,7 @@ let resenaController = {
             }
         })
         .then(() => {
-            res.redirect("/peliculas")
+            res.redirect("/usuario/misResenas")
         })
     },
 
@@ -77,13 +77,14 @@ let resenaController = {
             })
         
     },
-    actualizar: function(req, res){
+    
+ actualizar: function(req, res){
   
   
         let resenas = {
             resenas: req.body.resenas,
-            rating: req.body.rating,
-            fecha_de_actualizacion: req.body.fecha_de_actualizacion,
+            rating: req.body.estrellas,
+            fecha_de_actualizacion: db.sequelize.literal("CURRENT_DATE")
            
         }
 
@@ -93,7 +94,7 @@ let resenaController = {
             }
         })
         .then(() => {
-            res.redirect("/peliculas")
+            res.redirect("/usuario/misResenas")
         })
     },
 
@@ -103,10 +104,9 @@ let resenaController = {
 
     processLogin: function(req,res){
 
-        
-                
-        let errores = [];
-        moduloLogin.buscarPorEmail(req.body.pruebaEmail)
+      let errores = [];
+     
+      moduloLogin.buscarPorEmail(req.body.pruebaEmail)
 
           .then(usuario =>{
               
@@ -148,10 +148,11 @@ let resenaController = {
 
 
 
-    }
+    },
 
 
-
+   
+    
 
     
 

@@ -20,22 +20,24 @@
 
 
 <% if ( usuarios.length == 0) { %>
-                <h4 class= "titulos" style="color: white;">No se encontro ningun usuario</h4>
+          <div class="resultados"> 
+                
+              <h4 class= "titulos" style="color: white;">No se encontro ningun usuario</h4>
+
+          </div>
 <% } else {%>
 
   <h1 class="a titulos">Usuarios encontrados:</h1>
-  <h5 style="color:white"> (Click para ir al detalle del usuario)</h5>
+  
     <% for (let i = 0; i< usuarios.length; i++) { %>
-
-       
+      
         <ul> 
-        <li>
-            <a class="b" href="/peliculas/usuario/<%=usuarios[i].id%>" >
-             <%=usuarios[i].nombre %>
+           <li>
+                <a class="b" href="/peliculas/usuario/<%=usuarios[i].id%>" >
+                <%=usuarios[i].nombre %>
             
         </li>
-       
-    </ul>
+  </ul>
     <% } } %>
 
     <%- include("footer") %>

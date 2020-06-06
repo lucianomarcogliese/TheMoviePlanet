@@ -19,14 +19,16 @@
      
       <li class= "nav-item">
         
-        <form action="/peliculas/search" method="GET"> 
-          <input type="text" name="search" placeholder="Buscador de usuario">
-     
-      </form>  
+
+        <form action="/peliculas/search"  class="uk-search uk-search-default buscar" method="GET"> 
+          
+            <input type="text" class="form-control mr-sm-2" name="search" placeholder="Buscador de usuario">
+         </form> 
+
     </li> 
     <li class = "nav-item">   
-        <div class= "caja"> 
-      <select name="resenas" onchange="location = this.value">
+        <div class= ""> 
+      <select class="uk-select" name="resenas" onchange="location = this.value">
         <option selected="true" disabled = disabled> Reseñas</option>
         <option value="/peliculas/mejoresPuntuadas">Mejores puntuadas</option>
         <option value="/peliculas/peoresPuntuadas">Peores puntuadas</option>
@@ -57,7 +59,7 @@
     <a  id="login" style="color:gold"; class="uk-button uk-button-default btn btn-outline-warning" href="#modal-sections" uk-toggle>Registrate</a>
               <%} else { %>
                 <li style="list-style: none;"> 
-                <h4> Bienvenido <%=variableUsuario.nombre%> !! </h4>
+                <h3 style="margin-left: 8px; margin-top: 15px;" > Hola <%=variableUsuario.nombre%>!  </h4>
                 <% } %>
             </li>%>
 

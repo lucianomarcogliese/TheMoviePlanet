@@ -16,34 +16,70 @@
 </head>
 <body>
     <%- include("header") %>
+  
     <% if (variableUsuario == undefined){ %> 
-                    <h3 class="titulos"> <%=faltaLogin%> </h3>
-                    <a href="/usuario/pruebaLogin"> <p>Para loguiarte haz click aca</p></a>
+                   
+                <section class="error">
+
+                    <h3 class="titulos" > <%=faltaLogin%> </h3>
+                  <br>
+                  <br>
+                  <br>
+                </section>
+
     <%  } else {  %>
 
   
 
 <% if (resultado.length == 0) { %> 
+           
             <p class="titulos"> Todavia no tienes niguna reseña hecha! Anda al detalle de una pelicula y crea una! Que esperas!
             </p>
             
     <%} else {%>
-    <h1>Tus resenas son:</h1>
+    <h1 class="titulos">Tus resenas son:</h1>
 
     <% for (let i = 0; i < resultado.length; i++) { %>
-        <li class="resena">
-            <%=resultado[i].resenas%>
-        </li>
-
-        <form action="/usuario/delete/<%=resultado[i].id%>" method="POST">
-            <input type="submit" value="Borrar">
+      
+        <div class="uk-section uk-section-primary uk-preserve-color uk-width-1-2 uk-section-xsmall " style="margin-bottom: 10px; background-color: lightsalmon;" >
+            <div class="uk-container ">
+        
+                <div class="uk-panel uk-light uk-margin-medium">
+                    <h3 style="text-align: center;">    <%=resultado[i].rating%> ★</h3>
+                </div>
+        
+                <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body">
+                            <p>    <%=resultado[i].resenas%></p>
+                        </div>
+                           <div class="uk-flex-inline"> 
+                        <a class="uk-button uk-button-default btn btn-outline-warning nav-link" style="margin-top: 2%;"  href="/usuario/editar/<%=resultado[i].id%>">Editar</a> 
+                        
+        <form  style= "margin-left: 60%; margin-top: 2%; "  action="/usuario/delete/<%=resultado[i].id%>"  method="POST">
+            <input class="uk-button uk-button-default btn btn-outline-warning nav-link" type="submit" value="Borrar">
         </form>
-    
+    </div>
    
-        <a href="/usuario/editar/<%=resultado[i].id%>">Editar</a> 
+       
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+            
+      
+      
+      
+
 
     <% }  }} %>
   
+<br>
+
+<br>
+
+<br>
 
     <%- include("footer") %>
       
