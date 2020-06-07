@@ -8,12 +8,14 @@ let resenaController = require ("../controllers/resenaController");
 
 router.get("/misResenas" ,resenaController.validacion );
  
-
+//borar 
 router.post("/delete/:id" ,resenaController.borrar );
 
+//editar
 router.get("/editar/:id" ,resenaController.editar);
 
 router.post("/editar/:id", resenaController.actualizar);
+
 
 router.get("/pruebaLogin", resenaController.pruebaLogin );
 
