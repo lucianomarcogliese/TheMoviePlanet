@@ -20,11 +20,12 @@ router.get("/pruebaLogin", resenaController.pruebaLogin );
 router.post("/pruebaLogin", resenaController.processLogin );
 
 
+
 router.get("/check", function(req,res){
     if(req.session.usuarioLogueado == undefined){
         res.send("no estas logueado")
     } else {
-        res.send("El usuario logueado es:" + req.session.usuarioLogueado.email)
+        res.send("El usuario logueado es:" + req.session.usuarioLogueado.email ) 
     }
 } );
 
