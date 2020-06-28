@@ -22,7 +22,7 @@
    
         
     <% for(let i = 0; i < resenas.length; i++) { %>
-    <div class="puntuadas uk-flex-inline" style="margin: 2%;">  
+    <div class="puntuadas uk-flex-inline" style="margin: 2%; ">  
          <ul >
                 <a  href="/peliculas/usuario/<%=resenas[i].id_usuarios%>">
                 <li style="list-style: none;"><h3 style="color: white;"> <%=resenas[i].usuario.nombre %></h3></li>  </a>
@@ -35,7 +35,7 @@
             <% } %>
     
 
-
+<div style="height: 30vh;"></div>
 
     <%- include("footer") %>
 </body>
